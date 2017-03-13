@@ -31,6 +31,12 @@ steamClient.on('logOnResponse', function(logonResp) {
 steamFriends.on('message', function(source, message, type, chatter) {
     if (type === 1) {
         steamFriends.sendMessage(source, 'Look for your message at https://twitter.com/spinyswordfish')
+
+        if (message.length > 140) {message = message.slice(0, 139)}
+        client.post('statuses/update', {status: message},  function(error, tweet, response) {
+          if(error) {console.log(error)};
+          console.log(`recieved ${message} from ${source}`);  // Tweet body.
+        });
     }
   // if (message == 'ping') {
   //   steamFriends.sendMessage(source, 'pong', Steam.EChatEntryType.ChatMsg); // ChatMsg by default

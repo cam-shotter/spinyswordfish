@@ -18,6 +18,7 @@
   "homepage": "https://github.com/marcus-crane/spinyswordfish#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
-    "steam": "^1.4.0"
+    "steam": "^1.4.0",
+    "twitter": "^1.7.0"
   }
 }
