@@ -1,0 +1,19 @@
+{
+  "name": "spinyswordfish",
+  "version": "1.0.0",
+  "description": "Thing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcus-crane/spinyswordfish.git"
+  },
+  "author": "Cam Shotter & Marcus Crane <marcus@thingsima.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcus-crane/spinyswordfish/issues"
+  },
+  "homepage": "https://github.com/marcus-crane/spinyswordfish#readme"
+}
