@@ -21,7 +21,8 @@ steamClient.connect();
 steamClient.on('connected', function() {
   steamUser.logOn({
     account_name: process.env.STEAM_USERNAME,
-    password: process.env.STEAM_PASSWORD
+    password: process.env.STEAM_PASSWORD,
+    auth_code: process.argv[2]
   });
 });
 
@@ -43,3 +44,8 @@ steamFriends.on('message', function(source, message, type, chatter) {
         });
     }
 });
+
+steamFriends.on('friend', function(steamID, relationship) {
+    console.log(steamID)
+    console.log(relationship)
+})

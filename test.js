@@ -13,22 +13,23 @@ let devices = {}
 
 function stream() {
     let start = Date.now()
-    client.stream('statuses/filter', {track: 'news'}, function(stream) {
+    client.stream('statuses/filter', {track: '@support'}, function(stream) {
         stream.on('data', function(event) {
-            if (event && event.source) {
-                let $ = cheerio.load(event.source)
-                if (!devices[$.text()]) {
-                    devices[$.text()] = 1;
-                } else {
-                    devices[$.text()]++
-                }
-                console.log((Date.now()-start)/1000);
+            if (event && event.text) {
+                console.log(event.text);
+                // let $ = cheerio.load(event.source)
+                // if (!devices[$.text()]) {
+                //     devices[$.text()] = 1;
+                // } else {
+                //     devices[$.text()]++
+                // }
+                // console.log((Date.now()-start)/1000);
             }
 
-            if (Date.now() - start > 5000) {
-                stream.destroy()
-                console.log(devices)
-            }
+            // if (Date.now() - start > 5000) {
+            //     stream.destroy()
+            //     console.log(devices)
+            // }
         })
 
         stream.on('error', function(error) {
