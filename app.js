@@ -2,6 +2,10 @@ const Steam = require('steam')
 const Twitter = require('twitter')
 const env = require('dotenv').config()
 
+// remove @ symbols from usernames to avoid harassment
+// accept friends
+// using Set => Send tweet to a random user
+
 const steamClient = new Steam.SteamClient();
 const steamUser = new Steam.SteamUser(steamClient);
 const steamFriends = new Steam.SteamFriends(steamClient);
@@ -38,7 +42,4 @@ steamFriends.on('message', function(source, message, type, chatter) {
           console.log(`recieved ${message} from ${source}`);  // Tweet body.
         });
     }
-  // if (message == 'ping') {
-  //   steamFriends.sendMessage(source, 'pong', Steam.EChatEntryType.ChatMsg); // ChatMsg by default
-  // }
 });

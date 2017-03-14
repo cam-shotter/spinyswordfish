@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/marcus-crane/spinyswordfish#readme",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "dotenv": "^4.0.0",
     "steam": "^1.4.0",
     "twitter": "^1.7.0"
