@@ -11,3 +11,10 @@ We also deviated into messing around with the twitter streaming API which you ca
 The thinking was that it could constantly check for replies to the twitter account and send them to random users who had replied to the account but we got sidetracked heavily.
 
 Overall, it was a pretty good learning experience though!
+
+In order to use the bot, it needs a Twitter account + dev application credentials to be placed in the .env file (check https://dev.twitter.com)
+
+It also requires a Steam account. At first it'll work straight away but after a few attempts, Valve may freak out and require Steam Guard. When that happens, just pass it in as process.argv[2]
+
+
+For example, `node app.js "steam_guard_code_here"`
